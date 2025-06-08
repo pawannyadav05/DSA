@@ -1,0 +1,1 @@
+ //push the max to the last by adjcent swapp until whole sorted

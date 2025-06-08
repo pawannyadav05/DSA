@@ -1,0 +1,40 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile C++ (Clang)",
+            "type": "shell",
+            "command": "/usr/bin/clang++",
+            "args": [
+                "-std=c++17",
+                "-o",
+                "${fileBasenameNoExtension}",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compiles the current C++ file using Clang"
+        },
+        {
+            "label": "Compile and Run C++ (Clang)",
+            "type": "shell",
+            "command": "/usr/bin/clang++",
+            "args": [
+                "-std=c++17",
+                "-o",
+                "${fileBasenameNoExtension}",
+                "${file}"
+            ],
+            "group": "build",
+            "problemMatcher": ["$gcc"],
+            "detail": "Compiles and runs the current C++ file",
+            "windows": {
+                "command": "cmd.exe",
+                "args": ["/C", "clang++ ${file} -o ${fileBasenameNoExtension} && ${fileBasenameNoExtension}"]
+            }
+        }
+    ]
+}
