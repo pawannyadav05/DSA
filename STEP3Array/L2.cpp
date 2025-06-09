@@ -42,6 +42,7 @@ void leftrotatebyDplaceOptimal(){
     }
 }
 void movezeroatend(){
+    //brute
     int a[]={1,0,2,3,2,0,0,4,5,1};
     int n=10;
     for(int i=0;i<n;i++){
@@ -53,6 +54,7 @@ void movezeroatend(){
         cout<<a[i]<<" ";
     }
 }
+// imp 
 void movezeroatendoptimal(){
     int a[]={1,0,2,3,2,0,0,4,5,1};
     int n=10;
@@ -73,6 +75,70 @@ void movezeroatendoptimal(){
         cout<<a[i]<<" ";
     }
 }
+int linearsearch(){
+    int ar[]={6,7,8,4,1};
+    int num=8;
+    int indx=-1;
+    for(int i=0;i<5;i++){
+        if(num==ar[i]){
+            return i;
+        }
+    }
+    return -1;
+}
+
+//union of two sorted array
+void bruteftwosortedarray(){
+    set<int> st;
+    int a1[]={1,1,2,3,4,5};
+    int a2[]={2,3,4,4,5,6};
+    for(int i=0;i<6;i++){
+        st.insert(a1[i]);
+    }
+    for(int i=0;i<6;i++){
+        st.insert(a2[i]);
+    }
+    int unionar[st.size()];
+    int i=0;
+    for(auto it:st){
+        unionar[i++]=it;
+    }
+    //watch tc and sc in lect 2 48:00
+}
+void optimaltwosortedarrayunion(){
+    int a1[]={1,2,3,4,6};
+    int a2[]={2,3,5};
+    int s1= sizeof(a1)/4;
+    int s2= sizeof(a2)/4;
+    int i=0,j=0;
+    vector<int> unionArry;
+    while(i<s1 && j<s2){
+        if(a1[i]<=a2[j]){
+            if((unionArry.size()==0) || unionArry.back()!=a1[i]){
+                unionArry.push_back(a1[i]);
+            }
+            i++;
+        }else{
+            if((unionArry.size()==0) || unionArry.back()!=a2[j]){
+                unionArry.push_back(a2[j]);
+            }
+            j++;
+        }
+    }
+    while(j<s2){
+        if((unionArry.size()==0) || unionArry.back()!=a2[j]){
+                unionArry.push_back(a2[j]);
+            }
+            j++;
+    }
+    while(i<s1){
+        if((unionArry.size()==0) || unionArry.back()!=a1[i]){
+                unionArry.push_back(a1[i]);
+            }
+            i++;
+    } 
+    //we can return the vector 
+}
 int main(){
-    movezeroatendoptimal();
+    
 }
