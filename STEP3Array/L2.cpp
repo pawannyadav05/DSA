@@ -137,7 +137,7 @@ void optimaltwosortedarrayunion(){
             }
             i++;
     } 
-    //we can return the vector 
+    //we can return the vector  
 }
 int main(){
     
