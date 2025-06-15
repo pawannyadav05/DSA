@@ -22,6 +22,18 @@ string twosumbetter(){
     }
     return "No";
 }
+string twosumoptimal(){
+    int a[]={2,7,11,15};
+    int target=12;
+    int left=0,right=sizeof(a)/4;
+    while(left<right){
+        int sum=a[left]+a[right-1];
+        if(sum==target) return "Yes";
+        if(sum<target) left++;
+        else right--;
+    }
+    return "No";
+}
 int main(){
-    cout<<twosumbetter();
+    cout<<twosumoptimal();
 }
