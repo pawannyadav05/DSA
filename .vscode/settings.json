@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "regex": "cpp",
-        "cstdbool": "cpp"
+        "cstdbool": "cpp",
+        "vector": "cpp"
     }
 }
