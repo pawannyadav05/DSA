@@ -54,11 +54,36 @@ Node* dllfromdigit(long long a){
     reverse(vt.begin(),vt.end());
     return convertarraytodll(vt);
 }
+// optimal solution
+Node* sumoftwolloptimal(Node* head1,Node* head2){
+    Node* dH=new Node(-1);
+    Node* cur=dH;
+    Node* t1=head1;
+    Node* t2=head2;
+    int c=0;
+    while(t1!=NULL || t2!=NULL){
+        int s=c;
+        if(t1) s+=t1->data;
+        if(t2) s+=t2->data;
+        Node* nN=new Node(s%10);
+        c=s/10;
+
+        cur->next=nN;
+        cur=cur->next;
+
+        if(t1) t1=t1->next;
+        if(t2) t2=t2->next;
+    }
+    if(c){
+        Node* t=new Node(c);
+        cur->next=t;
+    }
+    return dH->next;
+
+}
 int main(){
     vector<int>a={3,8,7};
     vector<int>b={5,2,4,1};
-    Node* head=convertarraytodll(a);
-    Node* head1=convertarraytodll(b);
-    Node* Ans= dllfromdigit(digitfromdll(head1)+digitfromdll(head));
+    Node* Ans=sumoftwolloptimal(convertarraytodll(a),convertarraytodll(b));
     print(Ans);
 }
