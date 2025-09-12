@@ -14,6 +14,7 @@ int sumOfSubarrayMinimumBrute(vector<int>a){
     }
     return sum;
 }
+
 int main(){
 
 }

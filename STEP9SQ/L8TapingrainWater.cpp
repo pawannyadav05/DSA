@@ -40,5 +40,5 @@ int tapingRainwaterOptimal(vector<int>h){
 }
 
 int main(){
-
+    
 }
