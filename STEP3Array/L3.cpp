@@ -28,6 +28,10 @@ int missingnumberbetter(){
             return i;
         }
     }
+    vector<int> vt_name;
+    for(int i=0;i<5;i++){
+        
+    }
 }
 int missingnumberoptimal(){
     int n=5;

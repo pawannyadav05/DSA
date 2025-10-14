@@ -21,6 +21,7 @@ int f2Largest(){
     // loop till n-1 if any number is grater thenn sle and less then ge assign it into sle return after loop ends;
 
     //optimal
+    
     int a[]={2,7,1,6,9,4,42};
     int slarg=INT_MIN;
     int larg=a[0];
